@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application - [Company Name]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px 0;
+        }
+
+        .description {
+            margin: 20px 0;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+       
+        .contact-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .contact-btn:hover {
+            background-color: #45a049;
+        }
+
+        .border-bottom {
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            display: flex;  /* Makes the container a flexbox */
+            align-items: center;  /* Centers items vertically */
+            justify-content: space-between;  /* Spaces out content and button */
+        }
+
+        .col-9 {
+            flex: 1;  /* Allows the content column to take up the remaining space */
+        }
+
+        .col-3 {
+            display: flex;  /* Makes the button container a flexbox */
+            justify-content: flex-end;  /* Aligns button to the right */
+            flex: 0;  /* Prevents the button column from growing */
+        }
+
+        h4 {
+            color: rgb(120, 120, 120);
+            margin-bottom: 4px;
+        }
+
+        .btn-outline-primary {
+            border: 1px solid #007bff;
+            color: #007bff;
+            background-color: transparent;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>{{company_name}} -Careers</h1>
+    </header>
+
+    <div class="container">
+        <!-- Company Image -->
+        <img src="https://via.placeholder.com/400x200" alt="Company Photo">
+
+        <!-- Company Description -->
+        <div class="description">
+            <p>Welcome to {{company_name}}. We are a leading company in our industry with a commitment to excellence and
+                innovation. Our mission is to provide top-notch services and products to our customers, and we are
+                always looking for talented and driven individuals to join our team. Explore exciting career
+                opportunities and be part of our growth journey.</p>
+        </div>
+    </div>
+    <h2 class="text=center mt-2 mb-4">open positions</h2>
+    <div style="text-align: left;">
+        {%for job in jobs%} 
+           {%include 'jobitem.html' %}
+        {% endfor %}
+    </div>
+  
+
+    <!-- Contact Us Button -->
+    <a href="mailto:hr@company.com" class="contact-btn">Contact Us</a>
+</body>
+</html>
